@@ -10,4 +10,6 @@ public interface StudentServices {
 public StudentModel save(StudentModel studentModel);
 public void deleteStudentById(UUID id);
 public List<StudentModel> getAll();
+public StudentModel updateStudentById(UUID id,StudentModel studentModel);
+public StudentModel updateStudentNameById(UUID id,String name);
 }

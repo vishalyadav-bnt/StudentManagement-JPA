@@ -18,4 +18,9 @@ public class GloabalExceptionHandler {
     ErrorResponse errorResponse=new ErrorResponse(ex.getMessage(),HttpStatus.NOT_FOUND.value());
     return new ResponseEntity<>(errorResponse,HttpStatus.NOT_FOUND);
  }
+ public ResponseEntity<ErrorResponse>handleDataIsNotFound(DataIsNotPresent ex)
+ {
+    ErrorResponse errorResponse=new ErrorResponse(ex.getMessage(),HttpStatus.NOT_FOUND.value());
+    return new ResponseEntity<>(errorResponse,HttpStatus.NOT_FOUND);
+ }
 }

@@ -43,6 +43,35 @@ public class StudentServiceimpl implements StudentServices {
        }
        return studentRepository.findAll();
     }
+   @Override
+   public StudentModel updateStudentById(UUID id, StudentModel studentModel) {
+      Optional<StudentModel>stuOptional=studentRepository.findById(id);
+      if(stuOptional.isPresent())
+      {
+         StudentModel studentModel2=stuOptional.get();
+         studentModel2.setName(studentModel.getName());
+         studentModel2.setCity(studentModel.getCity());
+         studentModel2.setClassroom(studentModel.getClassroom());
+         return studentRepository.save(studentModel2);
+      }
+      else{
+         throw new StudentIdIsNotFound("Id Not Found For Uodate StudentData");
+      }
+   }
+   @Override
+   public StudentModel updateStudentNameById(UUID id, String name) {
+      Optional<StudentModel>stuOptional=studentRepository.findById(id);
+      if(stuOptional.isPresent())
+      {
+         StudentModel studentModel2=stuOptional.get();
+         studentModel2.setName(name);
+         return studentRepository.save(studentModel2);
+      }
+      else{
+         throw new StudentIdIsNotFound("Id Not Found For Uodate StudentData");
+      }
+   }
+    
    
  
 }
