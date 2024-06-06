@@ -4,7 +4,6 @@ import java.util.Optional;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.studentmanagament.controller.StudentController;
 import com.example.studentmanagament.exception.DataIsNotPresent;
 import com.example.studentmanagament.exception.StudentIdIsNotFound;
 import com.example.studentmanagament.exception.StudentObjectISNull;
@@ -15,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 @Service
 public class StudentServiceimpl implements StudentServices {
-    private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
+    private static final Logger logger = LoggerFactory.getLogger(StudentServiceimpl.class);
 
     @Autowired
     StudentRepository studentRepository;
@@ -37,7 +36,7 @@ public class StudentServiceimpl implements StudentServices {
        {  logger.info("Data Deleted with id:{}",id);
           studentRepository.deleteById(id);
        }else
-       { logger.error("Id not foud :{}",id);
+       { logger.error("Id not foud for delete :{}",id);
             throw new StudentIdIsNotFound("Student id is not present");
        }
     }
@@ -64,7 +63,7 @@ public class StudentServiceimpl implements StudentServices {
          logger.info("Data Updated SuccesFully :{}", studentModel2);
          return studentRepository.save(studentModel2);
       }
-      else{logger.error("Id not foud :{}",id);
+      else{logger.error("Id not foud for update:{}",id);
          throw new StudentIdIsNotFound("Id Not Found For Uodate StudentData");
       }
    }
@@ -79,7 +78,7 @@ public class StudentServiceimpl implements StudentServices {
          logger.info("Data Updated SuccesFully :{}", studentModel2);
          return studentRepository.save(studentModel2);
       }
-      else{logger.error("Id not foud :{}",id);
+      else{logger.error("Id not foud for update :{}",id);
          throw new StudentIdIsNotFound("Id Not Found For Uodate StudentData");
       }
    }

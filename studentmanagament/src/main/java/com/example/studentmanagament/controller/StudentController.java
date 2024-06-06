@@ -32,7 +32,7 @@ public class StudentController {
     StudentServiceimpl studentServiceimpl;
 
     @PostMapping("/")
-    public ResponseEntity<SuccessResponnse> save(@RequestBody StudentModel studentModel) {
+    public ResponseEntity<SuccessResponnse> saveStudent(@RequestBody StudentModel studentModel) {
         logger.info("Received request to save student data");
         StudentModel studentModel2 = studentServiceimpl.save(studentModel);
         logger.info("Student data saved successfully");
@@ -62,7 +62,7 @@ public class StudentController {
     public ResponseEntity<SuccessResponnse>updateStudentRecordById(@PathVariable("id")UUID id,@RequestBody StudentModel studentModel)
     {   logger.info("Received request for update data  with id :{}",id);
         StudentModel studentModel2=studentServiceimpl.updateStudentById(id,studentModel);
-        logger.info("Update  data  with id :{}",id);
+        logger.info("Update  data Succesfully with id :{}",id);
         SuccessResponnse successResponnse=new SuccessResponnse("Data Updated Succesfully",HttpStatus.OK.value(),studentModel2);
         return new ResponseEntity<>(successResponnse,HttpStatus.OK);
     }
@@ -71,7 +71,7 @@ public class StudentController {
     public ResponseEntity<SuccessResponnse>updateStudentNameById(@PathVariable("id")UUID id,@RequestParam("name")String name){
         logger.info("Received request for update data  with id :{}",id);
         StudentModel studentModel=studentServiceimpl.updateStudentNameById(id,name);
-        logger.info("Update data  with id :{}",id);
+        logger.info("Update data Succesfully with id :{}",id);
         SuccessResponnse successResponnse=new SuccessResponnse("Name Updated succesfully",HttpStatus.OK.value(),studentModel);
         return new ResponseEntity<>(successResponnse,HttpStatus.OK);
     }
