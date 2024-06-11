@@ -34,9 +34,9 @@ public class StudentController {
     @PostMapping("/")
     public ResponseEntity<SuccessResponnse> saveStudent(@RequestBody StudentModel studentModel) {
         logger.info("Received request to save student data");
-        StudentModel studentModel2 = studentServiceimpl.save(studentModel);
+        StudentModel newStudent = studentServiceimpl.save(studentModel);
         logger.info("Student data saved successfully");
-        SuccessResponnse successResponnse=new SuccessResponnse("Data Store Succesfully...",HttpStatus.CREATED.value(),studentModel2);
+        SuccessResponnse successResponnse=new SuccessResponnse("Data Store Succesfully...",HttpStatus.CREATED.value(),newStudent);
         return new ResponseEntity<>(successResponnse,HttpStatus.CREATED);
     }
 
@@ -69,9 +69,9 @@ public class StudentController {
 
     @PatchMapping("{id}")
     public ResponseEntity<SuccessResponnse>updateStudentNameById(@PathVariable("id")UUID id,@RequestParam("name")String name){
-        logger.info("Received request for update data  with id :{}",id);
+        logger.info("Request recieved for update name by using id");
         StudentModel studentModel=studentServiceimpl.updateStudentNameById(id,name);
-        logger.info("Update data Succesfully with id :{}",id);
+        logger.info("Student name update succesfully by using name");
         SuccessResponnse successResponnse=new SuccessResponnse("Name Updated succesfully",HttpStatus.OK.value(),studentModel);
         return new ResponseEntity<>(successResponnse,HttpStatus.OK);
     }

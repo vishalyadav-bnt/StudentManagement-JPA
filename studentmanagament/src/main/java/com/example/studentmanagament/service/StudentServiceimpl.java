@@ -25,8 +25,9 @@ public class StudentServiceimpl implements StudentServices {
        {logger.error("Object is null");
         throw new StudentObjectISNull("Student Object Is Null");
        }
-       logger.info("Student data stored succesfully", studentModel);
-       return studentRepository.save(studentModel);
+       StudentModel newStudent=studentRepository.save(studentModel);
+       logger.info("Student data stored succesfully", newStudent);
+       return newStudent;
     }
     @Override
     public void deleteStudentById(UUID id) {
@@ -47,8 +48,9 @@ public class StudentServiceimpl implements StudentServices {
        {logger.error("Data Is not present in database for fetching");
         throw new DataIsNotPresent("Data is not present");
        }
+       List<StudentModel>list=studentRepository.findAll();
        logger.info("Fetch All Data");
-       return studentRepository.findAll();
+       return list; 
     }
    @Override
    public StudentModel updateStudentById(UUID id, StudentModel studentModel) {
@@ -60,8 +62,9 @@ public class StudentServiceimpl implements StudentServices {
          studentModel2.setName(studentModel.getName());
          studentModel2.setCity(studentModel.getCity());
          studentModel2.setClassroom(studentModel.getClassroom());
+         StudentModel updateStudent=studentRepository.save(studentModel2);
          logger.info("Data Updated SuccesFully :{}", studentModel2);
-         return studentRepository.save(studentModel2);
+         return updateStudent;
       }
       else{logger.error("Id not foud for update:{}",id);
          throw new StudentIdIsNotFound("Id Not Found For Uodate StudentData");
@@ -75,8 +78,9 @@ public class StudentServiceimpl implements StudentServices {
       {
          StudentModel studentModel2=stuOptional.get();
          studentModel2.setName(name);
+         StudentModel updaStudent=studentRepository.save(studentModel2);
          logger.info("Data Updated SuccesFully :{}", studentModel2);
-         return studentRepository.save(studentModel2);
+         return updaStudent;
       }
       else{logger.error("Id not foud for update :{}",id);
          throw new StudentIdIsNotFound("Id Not Found For Uodate StudentData");
