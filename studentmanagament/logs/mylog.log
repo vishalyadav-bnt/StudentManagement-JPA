@@ -1,24 +1,62 @@
-2024-06-11 09:35:01 [main] INFO  c.e.s.StudentmanagamentApplication - Starting StudentmanagamentApplication using Java 21.0.3 with PID 5780 (D:\StudentManagement-JPA\studentmanagament\bin\main started by vishal.yadav in D:\StudentManagement-JPA\studentmanagament)
-2024-06-11 09:35:01 [main] INFO  c.e.s.StudentmanagamentApplication - No active profile set, falling back to 1 default profile: "default"
-2024-06-11 09:35:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-11 09:35:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interface.
-2024-06-11 09:35:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2024-06-11 09:35:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2024-06-11 09:35:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-06-11 09:35:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-11 09:35:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-06-11 09:35:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2413 ms
-2024-06-11 09:35:03 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-11 09:35:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-11 09:35:04 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2024-06-11 09:35:04 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-11 09:35:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2024-06-11 09:35:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4afcae7
-2024-06-11 09:35:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2024-06-11 09:35:06 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-11 09:35:06 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-11 09:35:07 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-11 09:35:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2024-06-11 09:35:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2024-06-11 09:35:07 [main] INFO  c.e.s.StudentmanagamentApplication - Started StudentmanagamentApplication in 7.356 seconds (process running for 8.205)
-2024-06-11 10:36:51 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m16s75ms150µs400ns).
+2024-06-13 11:09:39 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.studentmanagament.StudentmanagamentApplicationTests]: StudentmanagamentApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-13 11:09:39 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.studentmanagament.StudentmanagamentApplication for test class com.example.studentmanagament.StudentmanagamentApplicationTests
+2024-06-13 11:09:40 [Test worker] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/vishal.yadav/.gradle/caches/modules-2/files-2.1/org.json/json/20231013/e22e0c040fe16f04ffdb85d851d77b07fc05ea52/json-20231013.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/vishal.yadav/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-06-13 11:09:40 [Test worker] INFO  c.e.s.StudentmanagamentApplicationTests - Starting StudentmanagamentApplicationTests using Java 21.0.3 with PID 5432 (started by vishal.yadav in D:\StudentManagement-JPA\studentmanagament)
+2024-06-13 11:09:40 [Test worker] INFO  c.e.s.StudentmanagamentApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-13 11:09:41 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 11:09:41 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13 11:09:41 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 1 JPA repository interface.
+2024-06-13 11:09:41 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 11:09:41 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 11:09:41 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.studentmanagament.repositiory.StudentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-06-13 11:09:41 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-06-13 11:09:42 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13 11:09:42 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-13 11:09:42 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-13 11:09:43 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13 11:09:43 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-13 11:09:43 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52290e63
+2024-06-13 11:09:43 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-13 11:09:44 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13 11:09:44 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:09:45 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13 11:09:47 [Test worker] INFO  c.e.s.StudentmanagamentApplicationTests - Started StudentmanagamentApplicationTests in 7.415 seconds (process running for 9.258)
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Received request to save student data
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Student data saved successfully
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Received request for update data  with id :1f2be62f-c184-4bc9-a2cc-40972a08a96b
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Recieved Request for fetch all data
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Fetch All Data successfully...
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Received request for update data  with id :1f2be62f-c184-4bc9-a2cc-40972a08a96b
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Update  data Succesfully with id :1f2be62f-c184-4bc9-a2cc-40972a08a96b
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Request recieved for update name by using id
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Request recieved for update name by using id
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Student name update succesfully by using name
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Received request for delete data  with id :1f2be62f-c184-4bc9-a2cc-40972a08a96b
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.controller.StudentController - Data Deleted Succesfully with id 1f2be62f-c184-4bc9-a2cc-40972a08a96b
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Saving student data StudentModel(student_id=00a41154-ee52-4bde-9456-97de0ccc38a3, name=vishal, classroom=12, city=pune)
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Student data stored succesfully
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Fetching All Data.....
+2024-06-13 11:09:48 [Test worker] ERROR c.e.s.service.StudentServiceimpl - Data Is not present in database for fetching
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Uodating data with id:0af67f2c-e901-41bc-a51c-76ce6820bc3f
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Data Updated SuccesFully :StudentModel(student_id=0af67f2c-e901-41bc-a51c-76ce6820bc3f, name=null, classroom=0, city=null)
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Uodating data with id:null
+2024-06-13 11:09:48 [Test worker] ERROR c.e.s.service.StudentServiceimpl - Id not foud for update :null
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Uodating data with id:46c4d47e-7324-4d16-93d5-2d0716b9c7b5
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Data Updated SuccesFully :StudentModel(student_id=46c4d47e-7324-4d16-93d5-2d0716b9c7b5, name=vishal, classroom=12, city=pune)
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Fetching All Data.....
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Fetch All Data
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Saving student data null
+2024-06-13 11:09:48 [Test worker] ERROR c.e.s.service.StudentServiceimpl - Object is null
+2024-06-13 11:09:48 [Test worker] INFO  c.e.s.service.StudentServiceimpl - Uodating data with id:null
+2024-06-13 11:09:48 [Test worker] ERROR c.e.s.service.StudentServiceimpl - Id not foud for update :null
+2024-06-13 11:09:49 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:09:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-13 11:09:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

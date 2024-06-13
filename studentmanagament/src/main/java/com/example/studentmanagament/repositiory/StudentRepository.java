@@ -10,3 +10,4 @@ import com.example.studentmanagament.model.StudentModel;
 public interface StudentRepository extends JpaRepository<StudentModel,UUID>  {
     
 }
+

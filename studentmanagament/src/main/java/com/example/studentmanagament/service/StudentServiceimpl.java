@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import com.example.studentmanagament.exception.DataIsNotPresent;
 import com.example.studentmanagament.exception.StudentIdIsNotFound;
@@ -15,10 +17,10 @@ import org.slf4j.LoggerFactory;
 @Service
 public class StudentServiceimpl implements StudentServices {
     private static final Logger logger = LoggerFactory.getLogger(StudentServiceimpl.class);
-
     @Autowired
     StudentRepository studentRepository;
     @Override
+    @CacheEvict(value = "students", allEntries = true)
     public StudentModel save(StudentModel studentModel) {
       logger.info("Saving student data {}",studentModel);
        if(studentModel==null)
@@ -30,6 +32,7 @@ public class StudentServiceimpl implements StudentServices {
        return newStudent;
     }
     @Override
+    @CacheEvict(value = "students", key = "#id")
     public void deleteStudentById(UUID id) {
       logger.info("Deleting Data with {}",id);
        Optional<StudentModel> studentOptional = studentRepository.findById(id);
@@ -42,6 +45,7 @@ public class StudentServiceimpl implements StudentServices {
        }
     }
     @Override
+    @Cacheable(value = "students")
     public List<StudentModel> getAll() {
       logger.info("Fetching All Data.....");
        if(studentRepository.findAll().isEmpty())
@@ -53,6 +57,7 @@ public class StudentServiceimpl implements StudentServices {
        return list; 
     }
    @Override
+   @CacheEvict(key ="id",value ="students")
    public StudentModel updateStudentById(UUID id, StudentModel studentModel) {
       logger.info("Uodating data with id:{}",id);
       Optional<StudentModel>stuOptional=studentRepository.findById(id);
@@ -71,6 +76,7 @@ public class StudentServiceimpl implements StudentServices {
       }
    }
    @Override
+   @CacheEvict(key ="id",value ="students")
    public StudentModel updateStudentNameById(UUID id, String name) {
       logger.info("Uodating data with id:{}",id);
       Optional<StudentModel>stuOptional=studentRepository.findById(id);

@@ -10,12 +10,13 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name ="Student_details")
-public class StudentModel {
+public class StudentModel implements Serializable {
     @Id
     @GeneratedValue(strategy =GenerationType.UUID)
     @Column(name ="Student_id")
