@@ -6,7 +6,6 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +40,7 @@ public class StudentServiceimpl implements StudentServices {
    }
 
    @Override
-   @CacheEvict(value = "students", key = "#id",allEntries = true)
+  // @CacheEvict(value = "students", key = "#id",allEntries = true)
    public void deleteStudentById(UUID id) {
       logger.info("Deleting Data with {}", id);
       Optional<StudentModel> studentOptional = studentRepository.findById(id);
@@ -68,7 +67,7 @@ public class StudentServiceimpl implements StudentServices {
    }
 
    @Override
-   @CachePut(key = "#id", value = "students")
+  // @CachePut(key = "#id", value = "students")
    public StudentModel updateStudentById(UUID id, StudentModel studentModel) {
       logger.info("Updating data with id:{}", id);
       Optional<StudentModel> stuOptional = studentRepository.findById(id);
@@ -87,7 +86,7 @@ public class StudentServiceimpl implements StudentServices {
    }
 
    @Override
-   @CachePut(key = "#id", value = "students")
+   //@CachePut(key = "#id", value = "students")//remove
    public StudentModel updateStudentNameById(UUID id, String name) {
       logger.info("Updating data with id:{}", id);
       Optional<StudentModel> stuOptional = studentRepository.findById(id);
